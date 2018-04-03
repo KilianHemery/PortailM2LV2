@@ -1,0 +1,32 @@
+extends layout
+
+block append body
+    .container.theme-showcase(role='main')
+        .jumbotron
+            h1  Réseaux informatiques
+
+                h4 La M2L dispose actuellement :
+                    ul
+                        li d'un réseau commun aux ligues et à l'administration,
+                            li d'un réseau de type DMZ dans lequel on trouve un ensemble de serveurs accessibles depuis l'extérieur,
+                            li d'une connexion à internet.
+            p.lead
+                |   Note : une segmentation des réseaux est en projet pour augmenter la sécurité.
+        .page-header
+
+
+                h3 Les serveurs M2L
+
+                h3 L'administration de la M2L dispose de plusieurs serveurs :
+                    p.lead
+                     ul
+                        li un serveur d'annuaire et de fichiers qui abrite également des bases de données de gestion et qui fait office de serveur DHCP,
+                        li un serveur d'impression relié aux différents moyens d'impression des bureaux et de la salle de reprographie qui fait également office de serveur antiviral,
+                        li un serveur NAS permettant la sauvegarde des données de l'administration et de celles des ligues.
+
+                h3 Dans la DMZ, on trouve :
+                    ul
+                        li un serveur web,
+                        li un serveur de messagerie pour le domaine lorraine-sport.net. Les ligues ont des adresses du type escrime@lorraine-sport.net,
+                        li un serveur de gestion des configurations.
+

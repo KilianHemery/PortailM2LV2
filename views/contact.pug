@@ -1,0 +1,32 @@
+extends layout
+
+block append body
+    .container.theme-showcase(role='main')
+
+        h1.display-4.m-b-2 Comment nous contacter ?
+
+            br
+            form
+
+                div.form-group
+                    h3 Téléphone : 0200000000
+                div.form-group
+                    h3 Email : groupe1@m2l.com
+                div.form-group
+
+                    h1 Notre établissement
+                        #googleMap(style='width:100%;height:400px;')
+                        script.
+                            function myMap() {
+                                var mapProp = {
+                                    center: new google.maps.LatLng(47.234791, -1.514352),
+                                    zoom: 15,
+                                };
+                                var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+                                var marqueur = new google.maps.Marker({
+                                    position: new google.maps.LatLng(47.234791, -1.514352),
+                                    map: map
+                                })
+                            }
+                        script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyA7WQQp3trUiBv6JvUOySiZlzRJnR6zO7s&callback=myMap')

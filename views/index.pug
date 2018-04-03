@@ -1,0 +1,24 @@
+extends layout
+
+block append body
+    .container.theme-showcase(role='main')
+        center
+            img(src='/static/images/mdl.png')
+
+        .page-header
+            script(src='/javascripts/functions.js')
+
+            if (!user)
+                center
+                    h2 Bienvenue !!
+
+                    h4(id="test")
+
+            else
+                center
+                    h2 Bienvenue #{user.username}
+
+                    h4(id="test")
+
+            script.
+                setInterval(function dateDuJour() {getDateLocale();}, 1000);

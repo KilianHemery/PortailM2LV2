@@ -1,0 +1,23 @@
+extends layout
+
+block append body
+    .container.theme-showcase(role='main')
+
+        .jumbotron
+            h1 Visualisation des salles
+
+            p Liste des salles
+                table
+                    tr
+                        th Nom de salle
+                        th Capacité
+                        th Categorie
+                        th Heure d'ouverture
+                        th Heure de fermeture
+                    each val in listeSalles
+                        tr
+                            td= val['libelle']
+                            td= val['capacite']
+                            td= val['libellecat']
+                            td= val['heureouverture']
+                            td= val['heurefermeture']
