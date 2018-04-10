@@ -44,10 +44,15 @@ function validateForm(){
     }
 
     // Nom : Pas de chiffres
+    var exp = /^[a-zA-Z\s][^!?*_=+%£#]+$/;
+    //https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Expressions_r%C3%A9guli%C3%A8res
+    //http://regexpstudio.com/fr/regexp_syntax.html
+
     var errNom2 = document.getElementById('errNom2');
-    if (isNaN(nom)== false){
+
+    if (!nom.match(exp)){
         err+=1;
-        errNom2.textContent = 'Le nom ne doit pas comporter des chiffres.';
+        errNom2.textContent = 'Le nom ne doit pas comporter des chiffres ou certains caractères spéciaux tel que ! ? # * £ .';
         errNom2.style.color ='red';
     }
 
