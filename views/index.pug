@@ -12,13 +12,13 @@ block append body
                 center
                     h2 Bienvenue !!
 
-                    h4(id="test")
+                    h4(id="horloge")
 
             else
                 center
                     h2 Bienvenue #{user.username}
 
-                    h4(id="test")
+                    h4(id="horloge")
 
             script.
                 setInterval(function dateDuJour() {getDateLocale();}, 1000);
