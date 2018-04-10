@@ -40,10 +40,8 @@ function validateForm(){
         err+=1;
         errNom.textContent = 'Le nom doit être compris entre 2 et 20 caractères.';
         errNom.style.color ='red';
-        alert(nom.value);
-
+        
     }
-    //if(nom.value)
 
     // Nom : Pas de chiffres
     var exp = /^[a-zA-Z\s][^!?*_=+%£#§]+$/;
