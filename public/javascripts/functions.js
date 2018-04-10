@@ -26,6 +26,6 @@ function getDateLocale(sNameHTML){
         nSecondes = "0" + nSecondes;
 
     var sTxtDate = aJours[nJour] + ' ' + nDateJour + ' ' + aMois[nMois] + ' ' + nAnnee + '<br>' + nHeures + ':' + nMinutes + ':' + nSecondes;
-    document.getElementById('test').innerHTML = sTxtDate;
+    document.getElementById('horloge').innerHTML = sTxtDate;
 
 }
