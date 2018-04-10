@@ -1,4 +1,6 @@
 extends layout
+block append head
+    script(src = '/javascripts/functions.js')
 
 block append body
     .main.container
@@ -36,23 +38,32 @@ block append body
                         h1.display-4.m-b-2 Formulaire
 
                         // register form
-                        form(method='POST' action='/reservation')
+                        form(method='POST' action='/reservation', name='form', onsubmit="return validateForm()")
                             div.form-group
                                 label(for='name') Nom :
                                 input#name.form-control(
                                 type='text', placeholder='nom structure' name='nom' required)
+                            span(id="errNom")
+                            br
+                            span(id="errNom2")
                             div.form-group
                                 label(for='email') Email :
                                 input#email.form-control(type='email', placeholder='nom@email.com' name='email' required)
                             div.form-group
                                 label(for='tel') Téléphone
                                 input#tel.form-control(type='text', placeholder='0601020304' name='tel' required)
+                            span(id="errTel")
+                            br
+                            span(id="errTel2")
                             div.form-group
                                 label(for='dateDebut') Date de début :
                                 input#dateDebut.form-control(type='date', name='dateDeb' required)
+                            span(id="errDate2")
                             div.form-group
                                 label(for='dateDeFin') Date de fin :
                                 input#dateDeFin.form-control(type='date',name='dateFin' required)
+                            span(id="errDate")
+                            br
                             div.form-group
                                 |Salle :
                                 br
@@ -63,5 +74,5 @@ block append body
                                 input#utilisateur.form-control(type='hidden', value=user.id, name='utilisateur' required)
 
                             button.btn.btn-primary(type='submit', value='valider') Valider
-                            button.btn.btn-primary(type='reset') Annuler
+                            button.btn.btn-primary(type='reset', onclick='ResetPage()') Annuler
                             //button.btn.btn-primary(type='submit') Modifier
