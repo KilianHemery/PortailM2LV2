@@ -13,6 +13,26 @@ block append body
                 else
                     if (action=='new')
 
+                        h1 Les Réservations
+
+                        p Liste de toutes les réservations
+                            table
+                                tr
+                                    th Nom de salle
+                                    th Date de début
+                                    th Date de fin
+                                    th Nom de Stucture
+                                    th Email
+                                    th Téléphone
+
+                                    tr
+                                        td
+                                        td
+                                        td
+                                        td
+                                        td
+                                        td
+
                         h1.display-4.m-b-2 Formulaire
 
                         // register form
@@ -26,7 +46,7 @@ block append body
                                 input#email.form-control(type='email', placeholder='nom@email.com' name='email' required)
                             div.form-group
                                 label(for='tel') Téléphone
-                                input#tel.form-control(type='text', placeholder='Tel' name='tel' required)
+                                input#tel.form-control(type='text', placeholder='0601020304' name='tel' required)
                             div.form-group
                                 label(for='dateDebut') Date de début :
                                 input#dateDebut.form-control(type='date', name='dateDeb' required)
@@ -39,7 +59,9 @@ block append body
                                 select(name="salle" size="1" required=required)
                                     each row in listeSalles
                                         option(value=''+row.id+'') #{row.libelle}
-                            br
+                                br
+                                input#utilisateur.form-control(type='hidden', value=user.id, name='utilisateur' required)
+
                             button.btn.btn-primary(type='submit', value='valider') Valider
                             button.btn.btn-primary(type='reset') Annuler
                             //button.btn.btn-primary(type='submit') Modifier
