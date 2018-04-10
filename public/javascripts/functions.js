@@ -40,11 +40,13 @@ function validateForm(){
         err+=1;
         errNom.textContent = 'Le nom doit être compris entre 2 et 20 caractères.';
         errNom.style.color ='red';
+        alert(nom.value);
 
     }
+    //if(nom.value)
 
     // Nom : Pas de chiffres
-    var exp = /^[a-zA-Z\s][^!?*_=+%£#]+$/;
+    var exp = /^[a-zA-Z\s][^!?*_=+%£#§]+$/;
     //https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Expressions_r%C3%A9guli%C3%A8res
     //http://regexpstudio.com/fr/regexp_syntax.html
 
@@ -57,7 +59,7 @@ function validateForm(){
     }
 
     var tel = document.forms["form"]["tel"].value;
-
+/*
     //Tel : Composé de 10 chiffres.
     if ( tel.length != 10 ){
         var errTel = document.getElementById('errTel');
@@ -65,13 +67,16 @@ function validateForm(){
         errTel.textContent = 'Le numero doit être composé de 10 chiffres.';
         errTel.style.color ='red';
     }
-
+*/
     // Tel : Uniquement en chiffre
-    if (isNaN(tel) == true){
+    var exp2 = /^(0|\+33)[1-9]([-. ]?[0-9]{2}){4}$/;
+
+    //isNaN(tel) == true
+    if (!tel.match(exp2)){
         err+=1;
         //alert(isNaN(tel));
         var errTel2 = document.getElementById('errTel2');
-        errTel2.textContent = 'Le numero doit être uniquement en chiffres.';
+        errTel2.textContent = 'Le numero doit être composé de 10 chiffres (ou de 11 si il commence par +33).';
         errTel2.style.color ='red';
     }
 
