@@ -8,26 +8,3 @@ exports.salles = function (req, res, next){
     );
 };
 
-
-
-/*
-//Affichage de toutes les categories
-
-exports.categorie_list = function(req,res,next) {
-    const query = {
-
-        name: 'affichage-toutes-salles',
-        text: 'SELECT * FROM categorie'
-
-    };
-
-    db.get().query(query, function(err, result){
-        if (err) {
-            console.log(err.stack);
-            res.send('ERROR');
-        } else {
-            res.render('visualiser', { listeCategorie : result });
-        }
-    });
-};
-*/

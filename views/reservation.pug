@@ -13,25 +13,7 @@ block append body
                 else
                     if (action=='new')
 
-                        h1 Les Réservations
 
-                        p Liste de toutes les réservations
-                            table
-                                tr
-                                    th Nom de salle
-                                    th Date de début
-                                    th Date de fin
-                                    th Nom de Stucture
-                                    th Email
-                                    th Téléphone
-
-                                    tr
-                                        td
-                                        td
-                                        td
-                                        td
-                                        td
-                                        td
 
                         h1.display-4.m-b-2 Formulaire
 
@@ -65,3 +47,25 @@ block append body
                             button.btn.btn-primary(type='submit', value='valider') Valider
                             button.btn.btn-primary(type='reset') Annuler
                             //button.btn.btn-primary(type='submit') Modifier
+
+                        h1 Les Réservations
+
+                        p Liste de toutes les réservations
+                            table
+                                tr
+                                    th Nom de strucuture
+                                    th Nom de salle
+                                    th Catégorie de salle
+                                    th Date de début
+                                    th Date de fin
+                                    th Email
+                                    th Téléphone
+                                each val in listeReservation
+                                    tr
+                                        td= val['nom']
+                                        td= val['libelle']
+                                        td= val['libellecat']
+                                        td= val['datedebut']
+                                        td= val['datefin']
+                                        td= val['email']
+                                        td= val['tel']
