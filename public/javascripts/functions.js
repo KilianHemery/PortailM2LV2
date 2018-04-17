@@ -79,12 +79,12 @@ function validateForm(){
     }
 
     // Date :
-    var dateDeb = document.forms["form"]["dateDeb"].value;
-    var dateFin = document.forms["form"]["dateFin"].value;
+    var datedebut = document.forms["form"]["datedebut"].value;
+    var datefin = document.forms["form"]["datefin"].value;
 
     var var1 = new Boolean(false);
-    // DateDeb situé après la date de fin
-    if ( dateDeb > dateFin){
+    // Datedebut situé après la date de fin
+    if ( datedebut > datefin){
         err+=1;
         var var1 = true;
         var errDate = document.getElementById('errDate');
@@ -109,10 +109,10 @@ function validateForm(){
 
     dateToday =  dateYear+"-"+dateMonth+"-"+dateDay;
 
-    if(dateDeb < dateToday || dateFin < dateToday){
+    if(datedebut < dateToday || datefin < dateToday){
         err+=1;
-        //alert(dateDeb);
-        //alert(dateFin);
+        //alert(datedebut);
+        //alert(datefin);
         var errDate2 = document.getElementById('errDate2');
         if(var1 == true){
             var1 == false;

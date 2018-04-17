@@ -1,5 +1,6 @@
 extends layout
-
+block append head
+    script(src='/javascripts/functions.js')
 block append body
     .main.container
         .row
@@ -74,7 +75,7 @@ block append body
                                         td= val['nom']
                                         td= val['libelle']
                                         td= val['libellecat']
-                                        td= val['datedebut']
-                                        td= val['datefin']
+                                        td= val['datedebut'].getDate()+'/'+ (val['datedebut'].getMonth()+1) +'/'+ val['datedebut'].getFullYear()+' - '+val['datedebut'].getHours()+'h'+ val['datedebut'].getMinutes()
+                                        td= val['datefin'].getDate()+'/'+ (val['datefin'].getMonth()+1) +'/'+ val['datefin'].getFullYear()+' - '+val['datefin'].getHours()+'h'+ val['datefin'].getMinutes()
                                         td= val['email']
                                         td= val['tel']
