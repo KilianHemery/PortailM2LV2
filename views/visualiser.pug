@@ -3,10 +3,12 @@ extends layout
 block append body
     .container.theme-showcase(role='main')
 
+
         .jumbotron
+            script(src='/javascripts/functions.js')
             h1 Visualisation des salles
 
-            p Liste des salles
+            p Liste des salles existantes
                 table
                     tr
                         th Nom de salle
@@ -19,5 +21,18 @@ block append body
                             td= val['libelle']
                             td= val['capacite']
                             td= val['libellecat']
-                            td= val['heureouverture']
-                            td= val['heurefermeture']
+                            td= val['horairedebut'].getHours()+'h'+ val['horairedebut'].getMinutes()
+                            td= val['horairefin'].getHours()+'h'+ val['horairefin'].getMinutes()
+
+            p Salles déjà reservées
+                table
+                    tr
+                        th Nom de salle
+                        th Horaire début
+                        th Horaire fin
+
+                    each val in listeSallesReservees
+                        tr
+                            td= val['libelle']
+                            td= val['datedebut'].getDate()+'/'+ (val['datedebut'].getMonth()+1) +'/'+ val['datedebut'].getFullYear()+' - '+val['datedebut'].getHours()+'h'+ val['datedebut'].getMinutes()
+                            td= val['datefin'].getDate()+'/'+ (val['datefin'].getMonth()+1) +'/'+ val['datefin'].getFullYear()+' - '+val['datefin'].getHours()+'h'+ val['datefin'].getMinutes()
