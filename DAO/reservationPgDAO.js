@@ -54,5 +54,37 @@ class ReservationPgDAO {
 
     }
 
+    selectReservation(displaycb2)
+    {
+
+        const reservation = {
+            name: 'reservation',
+            text: 'select reservation.nom, email, tel, datefin, datedebut, libellecat, username, libelle\n' +
+            'from reservation\n' +
+            'inner join salle\n' +
+            'on reservation.unesalle = salle.id\n' +
+            'inner join categorie\n' +
+            'on salle.unecategorie = categorie.id\n' +
+            'inner join utilisateurs\n' +
+            'on reservation.utilisateur = utilisateurs.id'
+        };
+
+        this._client.query(reservation, function (err, result) {
+            if (err) {
+                console.log(err.stack);
+            } else {
+                var lesReservations = [];
+                result.rows.forEach(function(row)
+                {
+                    lesReservations.push(row);
+                });
+                displaycb2(lesReservations);
+            }
+
+
+        });
+
+    }
+
 }
 module.exports = ReservationPgDAO;

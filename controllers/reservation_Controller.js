@@ -8,7 +8,11 @@ exports.liste_reservation = function (req, res, next) {
 
 exports.liste_salle = function (req, res, next){
     reservationPgDAO.selectSalle(function (lesSalles) {
-            res.render('reservation',{listeSalles: lesSalles, action:'new',user: req.user})
+        reservationPgDAO.selectReservation(function (listeReservation) {
+            res.render('reservation',{listeReservation: listeReservation, listeSalles: lesSalles, action:'new',user: req.user})
         }
     );
+});
 };
+
+
