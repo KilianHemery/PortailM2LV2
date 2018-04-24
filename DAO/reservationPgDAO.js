@@ -66,7 +66,7 @@ class ReservationPgDAO {
             'inner join categorie\n' +
             'on salle.unecategorie = categorie.id\n' +
             'inner join utilisateurs\n' +
-            'on reservation.utilisateur = utilisateurs.id where utilisateurs.id=1',
+            'on reservation.utilisateur = utilisateurs.id',
 
 
         };
